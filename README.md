@@ -21,13 +21,13 @@ Berisi tabel kosakata dasar dalam bahasa Jepang (Hiragana, Romaji, dan arti).
 
 Dirancang agar mudah dibaca dan diakses oleh pemula.
 
-🎯 Halaman Kuis (kuis.html) (opsional — bisa ditambahkan)
+🎯 Halaman Kuis (kuis.html) 
 
 Pengguna dapat menjawab pertanyaan sederhana seputar kosakata Jepang.
 
 Hasil akan muncul secara langsung di halaman.
 
-🎎 Halaman Budaya Jepang (budaya.html) (opsional — bisa ditambahkan)
+🎎 Halaman Budaya Jepang (budaya.html) 
 
 Menjelaskan berbagai aspek budaya Jepang seperti festival, makanan khas, dan etika sehari-hari.
 
@@ -46,10 +46,9 @@ Kamu juga bisa membaca halaman Budaya Jepang untuk mengenal kebiasaan dan tradis
 💻 Cara Menjalankan / Mengakses Website
 
 Akses Online (GitHub Pages)
-Buka tautan berikut setelah website dipublikasikan:
+
 👉 https://malfattah009-ux.github.io/Belajar-Bahasa-Jepang/index.html
 
-(ganti “username” dan “namarepo” sesuai akun GitHub kamu)
 
 Akses Offline (di Komputer Sendiri)
 
