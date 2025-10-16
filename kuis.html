@@ -34,7 +34,7 @@
         <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
         <li class="nav-item"><a class="nav-link" href="kosakata.html">Kosakata</a></li>
         <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya Jepang</a></li>
-        <li class="nav-item"><a class="nav-link active" href="kuis.html">Kuis Hiragana</a></li>
+        <li class="nav-item"><a class="nav-link active" href="kuis.html">Kuis Hiragana 🎯</a></li>
       </ul>
     </div>
   </div>
@@ -49,7 +49,7 @@
     <div class="hiragana" id="question">あ</div>
 
     <div class="mt-3" id="options">
-      <!-- Tombol jawaban akan muncul lewat JS -->
+      <!-- Tombol jawaban muncul lewat JS -->
     </div>
 
     <div id="feedback" class="feedback"></div>
@@ -57,7 +57,12 @@
     <button id="nextBtn" class="btn btn-danger mt-4" style="display:none;">Soal Berikutnya</button>
   </div>
 
-  <a href="index.html" class="btn btn-outline-danger mt-5">← Kembali ke Beranda</a>
+  <!-- Tombol ke Kuis lagi di bawah -->
+  <div class="text-center mt-5">
+    <a href="kuis.html" class="btn btn-danger btn-lg shadow">
+      🎯 Mulai Kuis Hiragana
+    </a>
+  </div>
 </div>
 
 <footer class="bg-danger text-white text-center py-3 mt-5">
@@ -92,13 +97,13 @@ function getRandomQuestion() {
   const correctAnswer = current[1];
   let options = [correctAnswer];
 
-  // Pilih 3 opsi acak lain
+  // Tambah 3 opsi acak
   while (options.length < 4) {
     const rand = allRomaji[Math.floor(Math.random() * allRomaji.length)];
     if (!options.includes(rand)) options.push(rand);
   }
 
-  // Acak posisi
+  // Acak posisi opsi
   options.sort(() => Math.random() - 0.5);
 
   questionEl.textContent = current[0];
@@ -127,144 +132,9 @@ function checkAnswer(answer) {
 }
 
 nextBtn.onclick = () => getRandomQuestion();
-
 getRandomQuestion();
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kuis Hiragana Dasar</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body { background-color: #fffafa; }
-    .hiragana {
-      font-size: 100px;
-      font-weight: bold;
-      color: #dc3545;
-      font-family: "Noto Sans JP", sans-serif;
-    }
-    .feedback {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-  </style>
-</head>
-<body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">JP Belajar Jepang</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-        <li class="nav-item"><a class="nav-link" href="kosakata.html">Kosakata</a></li>
-        <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya Jepang</a></li>
-        <li class="nav-item"><a class="nav-link active" href="kuis.html">Kuis Hiragana</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Konten Utama -->
-<div class="container text-center mt-5">
-  <h1 class="fw-bold text-danger">🎌 Kuis Hiragana Dasar</h1>
-  <p class="text-muted">Tebak huruf Hiragana berikut dengan memilih romanisasi yang benar</p>
-
-  <div id="quiz" class="mt-4">
-    <div class="hiragana" id="question">あ</div>
-
-    <div class="mt-3" id="options">
-      <!-- Tombol jawaban akan muncul lewat JS -->
-    </div>
-
-    <div id="feedback" class="feedback"></div>
-
-    <button id="nextBtn" class="btn btn-danger mt-4" style="display:none;">Soal Berikutnya</button>
-  </div>
-
-  <a href="index.html" class="btn btn-outline-danger mt-5">← Kembali ke Beranda</a>
-</div>
-
-<footer class="bg-danger text-white text-center py-3 mt-5">
-  <p class="mb-0">© 2025 Belajar Bahasa Jepang | Muhammad Alfattah & Riyan Mifkah Huddin</p>
-</footer>
-
-<script>
-const hiraganaList = [
-  ["あ","a"], ["い","i"], ["う","u"], ["え","e"], ["お","o"],
-  ["か","ka"], ["き","ki"], ["く","ku"], ["け","ke"], ["こ","ko"],
-  ["さ","sa"], ["し","shi"], ["す","su"], ["せ","se"], ["そ","so"],
-  ["た","ta"], ["ち","chi"], ["つ","tsu"], ["て","te"], ["と","to"],
-  ["な","na"], ["に","ni"], ["ぬ","nu"], ["ね","ne"], ["の","no"],
-  ["は","ha"], ["ひ","hi"], ["ふ","fu"], ["へ","he"], ["ほ","ho"],
-  ["ま","ma"], ["み","mi"], ["む","mu"], ["め","me"], ["も","mo"],
-  ["や","ya"], ["ゆ","yu"], ["よ","yo"],
-  ["ら","ra"], ["り","ri"], ["る","ru"], ["れ","re"], ["ろ","ro"],
-  ["わ","wa"], ["を","wo"], ["ん","n"]
-];
-
-let current = {};
-const questionEl = document.getElementById("question");
-const optionsEl = document.getElementById("options");
-const feedbackEl = document.getElementById("feedback");
-const nextBtn = document.getElementById("nextBtn");
-
-function getRandomQuestion() {
-  const randomIndex = Math.floor(Math.random() * hiraganaList.length);
-  current = hiraganaList[randomIndex];
-
-  const allRomaji = hiraganaList.map(item => item[1]);
-  const correctAnswer = current[1];
-  let options = [correctAnswer];
-
-  // Pilih 3 opsi acak lain
-  while (options.length < 4) {
-    const rand = allRomaji[Math.floor(Math.random() * allRomaji.length)];
-    if (!options.includes(rand)) options.push(rand);
-  }
-
-  // Acak posisi
-  options.sort(() => Math.random() - 0.5);
-
-  questionEl.textContent = current[0];
-  optionsEl.innerHTML = "";
-  feedbackEl.textContent = "";
-  nextBtn.style.display = "none";
-
-  options.forEach(opt => {
-    const btn = document.createElement("button");
-    btn.textContent = opt;
-    btn.className = "btn btn-outline-danger m-2";
-    btn.onclick = () => checkAnswer(opt);
-    optionsEl.appendChild(btn);
-  });
-}
-
-function checkAnswer(answer) {
-  if (answer === current[1]) {
-    feedbackEl.textContent = "Benar! 🎉";
-    feedbackEl.style.color = "green";
-    nextBtn.style.display = "inline-block";
-  } else {
-    feedbackEl.textContent = "Salah, coba lagi 😅";
-    feedbackEl.style.color = "red";
-  }
-}
-
-nextBtn.onclick = () => getRandomQuestion();
-
-getRandomQuestion();
-</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
