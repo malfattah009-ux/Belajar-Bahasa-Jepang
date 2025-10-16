@@ -47,7 +47,7 @@ Kamu juga bisa membaca halaman Budaya Jepang untuk mengenal kebiasaan dan tradis
 
 Akses Online (GitHub Pages)
 Buka tautan berikut setelah website dipublikasikan:
-👉 https://username.github.io/namarepo
+👉 https://malfattah009-ux.github.io/Belajar-Bahasa-Jepang/kuis.html
 
 (ganti “username” dan “namarepo” sesuai akun GitHub kamu)
 
